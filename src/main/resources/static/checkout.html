@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap checkout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../toy_publishings/css/commons.css">
+</head>  
+<body>
+    <div class="container py-5 text-center">
+        <img  src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt width="75" height="60" >
+        <h1>Checkout form</h1>
+        <P>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a 
+        validation state that can be triggered by attempting to submit the form without completing it.</P>
+    </div>
+          
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-lg-8"><!--8,4로 나눔-->
+                    <div class="fs-3">Billing address</div>            
+                    <form action="/CheckoutResponseServlet"> <!-- 폼-->    
+                        <div class="m-3 w-75">
+                            <div class="row py-2">
+                                <div class="col-sm-6"><!--firstname-->
+                                        <label class="form-label" for="idfirstname">First name</label>
+                                        <input class="form-control" type="text" name="firstname" placeholder="hyowon" id="idfirstname"> 
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label" for="idlastname">Last name</label>
+                                    <input class="form-control" type="text"  name="lastname"  placeholder="cho" id="idlastname"> 
+                                </div>
+                            </div>
+                            <div class="py-2">
+                                <lable class="form-label" for="idusername">Username</lable>
+                                <input class="form-control" type="text" placeholder="Userame" name="username" id="idusername" >
+                            </div>
+                    
+                            <div class="py-2"><!--이메일 작성-->
+                                <label class="form-label" for="idemail">Email (Optional)</label>
+                                <input class="form-control" type="email" name="emailAddress" id="idemail" placeholder="otter@yojulab.com"> 
+                            </div>
+
+                            <div class="py-2"><!--Address-->
+                                <label class="form-label" for="idaddress">Address</label>
+                                <input class="form-control" type="text" name="address"  value="39 sorae" placeholder="1234 Man St" id="idaddress"> 
+                            </div>
+                    
+                            <div class="py-2"><!--Address-->
+                                <label class="form-label" for="idaddress2">Address 2 (Optional) </label>
+                                <input class="form-control" type="text" name="address2"  value="000-000" placeholder="Apartment or suite" id="idaddress2"> 
+                            </div>
+
+                            <div class="row py-2">
+                                <div class="col-md-5">
+                                    <div><!--Country select로 선택하기-->
+                                        <label class="form-label" for="idcountry">Country </label> <!--form-select 방향키나옴-->
+                                        <select  class="form-select"  name ="country" id="idcountry"> <!--choose값은 넘어가지 않기 위해서 value 공백으로 설정 -->
+                                            <option disabled selected value="">Choose...</option> <!--아예 선택못하게 disabled 선택 비활성화함-->
+                                            <option value="France">France</option>
+                                            <option value="Korea" >Korea</option>
+                                            <option value="China">China</option>
+                                            <option value="USA ">USA</option>
+                                            <option value="Germany ">Germany</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div><!--State select로 선택하기-->
+                                        <label class="form-label" for="idstate">State </label>
+                                        <select  class="form-select"  name ="state" id="idstate"> 
+                                            <option disabled selected value="">Choose...</option>
+                                            <option value="gyeonggi-do">Gyeonggi-do</option>
+                                            <option value="chungcheong-do" >Chungcheong-do</option>
+                                            <option value="gangwon-do">Gangwon-do</option>
+                                        </select>
+            
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div><!--zip-->
+                                            <label class="form-label" for="zip">Zip </label>
+                                            <input class="form-control" type="text" name="zip " placeholder="123455" id="idzip"> 
+                                    </div>
+                                </div>
+                            </div>
+                        <div>
+                            <button type="submit" class="w-75 btn btn-primary" >Continu to checkout</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>
