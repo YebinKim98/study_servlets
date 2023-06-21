@@ -32,9 +32,9 @@ public class CarInforsServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(url, user, password); 
             System.out.println("DB연결 성공\n");
             
-            Commons commons = new Commons();
-          
+            Commons commons = new Commons(); //유니크아이디
             Statement statement = connection.createStatement();
+
             //insert문 
             String query2 = "insert into car_infors\n" + //
                     "(CAR_NAME, YEAR, CAR_INFOR_ID, COMPANY_ID)\n" + //
@@ -42,7 +42,7 @@ public class CarInforsServlet extends HttpServlet {
                     "('뉴효원', '2023', '" +commons.generateUUID()+ "', 'C002')";
             int count = statement.executeUpdate(query2);
 
-            // - query Edit
+            // select문
             String query ="SELECT * FROM db_cars.car_infors;";
             ResultSet resultSet = statement.executeQuery(query); 
             while(resultSet.next()){
