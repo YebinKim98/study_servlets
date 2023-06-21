@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 // + 항목 맞게 표시
 // - github와 동작 url 공유
 
-@WebServlet(urlPatterns = "/checkoutFormServlet")
+@WebServlet(urlPatterns = "/checkoutFormServlet") //URL 
 public class CheckoutFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
