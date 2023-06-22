@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/checkoutResponseServlet")
-public class CheckoutResponseServlet extends HttpServlet {
+public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          System.out.println("checkoutResponseServlet - doGet()");
