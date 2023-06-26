@@ -11,38 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/cookies/GetAndDeleteServlet")
-public class CookiesGetAndDeleteServlet extends HttpServlet {
+public class CookiesGetAndDeleteServlet  extends HttpServlet{
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         try {
-        //cookies
-        Cookie[] cookies = request.getCookies();
-        String content = "<div>CookiesGetAndDeleteServle</div>";
-        for(Cookie cookie:cookies){
-            String name = cookie.getName();
-            String value = cookie.getValue();
-            if(name.equals("secondName")){ //쿠키삭제
-                    cookie.setMaxAge(0); // 0 : 삭제 , -1 : 무한
-                    response.addCookie(cookie);
-            }else{ //출력 
-                 content = content + "<div>"+name+","+value+"</div>";
+            // cookies
+            Cookie[] cookies = request.getCookies();
+            for(Cookie cookie:cookies){
+                String name = cookie.getName();
+                String value = cookie.getValue();
             }
 
-        
-        }
-
-
-        // display
-        PrintWriter printWriter = response.getWriter();
-        printWriter.println(content);
-        printWriter.close();
-
-            
-
+            // display
+            PrintWriter printWriter = response.getWriter();
+            String content = "<div>CookiesGetAndDeleteServlet</div>";
+            printWriter.println(content);
+            printWriter.close();
 
         } catch (Exception e) {
-     System.out.println(e.getMessage());
-
+            System.out.println(e.getMessage());
         }
     }
 }

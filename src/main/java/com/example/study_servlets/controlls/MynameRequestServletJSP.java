@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/mynameRequestServletJSP")
 public class MynameRequestServletJSP extends HttpServlet {
     @Override
+<<<<<<< HEAD
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        try {
           /*servlet JSP로 분리되니까 필요없으므로 삭제
@@ -24,5 +25,13 @@ public class MynameRequestServletJSP extends HttpServlet {
         } catch (Exception e) {
         System.out.println(e.getMessage());
        }
+=======
+     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    try {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/myname_request.jsp");
+        requestDispatcher.forward(request, response);
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+>>>>>>> e94f80b0e3c664ce294146b7dd8314b2bbea287f
     }
 }

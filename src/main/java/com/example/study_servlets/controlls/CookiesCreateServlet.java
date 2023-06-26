@@ -11,27 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/cookies/CreateServlet")
-public class CookiesCreateServlet extends HttpServlet {
+public class CookiesCreateServlet extends HttpServlet{
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         try {
-            Cookie cookie_first = new Cookie("firstName","Yoju");
-            Cookie cookie_second = new Cookie("secondName","Lab");
+            // cookies
+            Cookie cookie_first = new Cookie("firstName", "YoJu!");
+            Cookie cookie_second = new Cookie("secondName", "Lab!z");
 
             response.addCookie(cookie_first);
             response.addCookie(cookie_second);
 
-        // display
-        PrintWriter printWriter = response.getWriter();
-        String content = "<div>CreateCookieServlets</div>";
-        printWriter.println(content);
-        printWriter.close();
+            // display
+            PrintWriter printWriter = response.getWriter();
+            String content = "<div>CreateCookieServlets</div>";
+            printWriter.println(content);
+            printWriter.close();
 
-            
         } catch (Exception e) {
-     System.out.println(e.getMessage());
-
+            System.out.println(e.getMessage());
         }
     }
 }
-
