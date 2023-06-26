@@ -11,12 +11,13 @@ public class OptionInforsDao {
      public static int InsertName(String name) {
         int count = 0;
         try {
-            Commons commons = new Commons();
+            Commons commons = new Commons();    
+            Statement uniqueID = commons.getStatement();        
             Statement statement = commons.getStatement(); // Editor in workbench
             String query = "INSERT INTO option_infors\n" + //
                     "(OPTION_INFOR_ID,OPTION_NAME)\n" + //
                     "VALUES\n" + //
-                    "('OP-007','"+name+"');";
+                    "('"+uniqueID+"','"+name+"');";
             count = statement.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());

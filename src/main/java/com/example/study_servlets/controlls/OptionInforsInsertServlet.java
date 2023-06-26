@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.example.study_servlets.controlls.commons.Commons;
 import com.example.study_servlets.daos.OptionInforsDao;
 
 @WebServlet(urlPatterns = "/optionInforsInsertServlet")
@@ -16,6 +17,9 @@ public class OptionInforsInsertServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+
+            Commons commons = new Commons();
+            String uniqueID = commons.generateUUID();
             
             String name = request.getParameter("name");
 

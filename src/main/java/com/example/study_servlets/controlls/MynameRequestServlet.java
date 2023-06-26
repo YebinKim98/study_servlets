@@ -40,7 +40,7 @@ public class MynameRequestServlet extends HttpServlet {
             printWriter.println(contents);
             printWriter.close();
     } catch (Exception e) {
-        // TODO: handle exception
+         System.out.println(e.getMessage());  // TODO: handle exception
     }
         }
     }
