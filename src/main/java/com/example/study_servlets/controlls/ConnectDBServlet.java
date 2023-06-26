@@ -49,7 +49,7 @@ public class ConnectDBServlet extends HttpServlet {
                     "            <tbody>\r\n";
 
             // - query Edit   
-                        CarlnforsDao  carlnforsDao  = new CarlnforsDao();
+            CarlnforsDao  carlnforsDao  = new CarlnforsDao();
             ArrayList carlnforsList = new ArrayList();
             carlnforsList = carlnforsDao.selectAll();
 

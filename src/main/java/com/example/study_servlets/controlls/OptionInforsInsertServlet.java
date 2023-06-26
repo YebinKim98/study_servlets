@@ -11,23 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.study_servlets.daos.OptionInforsDao;
 
-@WebServlet(urlPatterns = "/optionInforsDeleteServlet")
-public class OptionInforsDeleteServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/optionInforsInsertServlet")
+public class OptionInforsInsertServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String unique_id = request.getParameter("unique_id");
+            
+            String name = request.getParameter("name");
 
-            OptionInforsDao optionInforDao = new OptionInforsDao();
-            int count = optionInforDao.DeleteWithUniqueID(unique_id);
+            OptionInforsDao optionInforsDao = new OptionInforsDao();
+            int count = optionInforsDao.InsertName(name);
 
             response.setContentType("text/html;charset=UTF-8");
-            PrintWriter printWriter = response.getWriter(); 
-            String contents = "Delete count:"+count;
-            printWriter.println(contents); 
-            printWriter.close();
+            PrintWriter printWriter = response.getWriter();
+            String contents ="Insert count : "+count;
+           printWriter.println(contents);
+           printWriter.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+           System.out.println(e.getMessage());
         }
     }
+    
 }
